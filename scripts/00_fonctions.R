@@ -1,5 +1,6 @@
 # Fonction 1: Calculer moyenne generale
 calcul_moyenne <- function(notes_s1, notes_s2) {
+  # On garde pas les valeurs manquantes (na.rm = TRUE)
   moyenne_s1 <- rowMeans(notes_s1, na.rm = TRUE)
   moyenne_s2 <- rowMeans(notes_s2, na.rm = TRUE)
   return(list(moyenne_s1 = moyenne_s1, moyenne_s2 = moyenne_s2))
@@ -8,9 +9,11 @@ calcul_moyenne <- function(notes_s1, notes_s2) {
 # Fonction 2: Categoriser les etudiants par age
 categoriser_age <- function(age) {
   categorie <- cut(age,
-                   breaks = c(17, 20, 22, 26),
+                   # Note: 27 pour inclure 26 dans les intervales
+                   breaks = c(18, 21, 23, 27),
                    labels = c("18-20", "21-22", "23-26"),
-                   include.lowest = TRUE)
+                   right = FALSE,  # Intervalles fermés à gauche [a,b)
+                   include.lowest = FALSE)
   return(categorie)
 }
 
