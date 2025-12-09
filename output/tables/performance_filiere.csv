@@ -1,0 +1,5 @@
+"filiere","Effectif","Pourcentage","Moyenne_S1","Moyenne_S2","Variation","Taux_reussite_S1","Taux_reussite_S2","Heures_etude_moy","Absences_moy_S1","Absences_moy_S2"
+"Mathématiques",42,21,12.37,12.38,0.01,97.6,90.5,18.4,4.5,5
+"Physique",48,24,11.74,11.95,0.21,85.4,91.7,19.3,5.1,5.1
+"Informatique",82,41,11.98,11.91,-0.07,85.4,85.4,20.8,5.4,5.2
+"Economie",28,14,11.09,10.96,-0.13,71.4,71.4,19.3,5.2,5.3
