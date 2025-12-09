@@ -1,6 +1,5 @@
-# 00_fonctions.R - Fonctions personnalisees pour le projet
+# Fonctions personnalisees pour le projet
 # Auteur: Bendy SERVILUS
-# Date: 07/12/2024
 
 # Fonction 1: Calculer moyenne generale d'un etudiant
 # Parametres:
@@ -218,4 +217,66 @@ calcul_variation <- function(notes_s1, notes_s2) {
   )
   
   return(stats_variation)
+}
+
+# Fonction 9: Traiter les valeurs manquantes d'une variable
+# Parametres:
+#   - vecteur: vecteur avec potentiellement des NA
+#   - methode: "mediane", "moyenne", "mode", "zero", "supprimer"
+traiter_na <- function(vecteur, methode = "mediane") {
+  na_count <- sum(is.na(vecteur))
+  
+  if (na_count == 0) {
+    return(vecteur)
+  }
+  
+  cat("   Traitement de", na_count, "NA avec methode:", methode, "\n")
+  
+  resultat <- switch(methode,
+                     "mediane" = {
+                       median_val <- median(vecteur, na.rm = TRUE)
+                       vecteur[is.na(vecteur)] <- median_val
+                       vecteur
+                     },
+                     "moyenne" = {
+                       mean_val <- mean(vecteur, na.rm = TRUE)
+                       vecteur[is.na(vecteur)] <- mean_val
+                       vecteur
+                     },
+                     "mode" = {
+                       # Pour les variables catégorielles
+                       freq_table <- table(vecteur)
+                       mode_val <- names(freq_table)[which.max(freq_table)]
+                       vecteur[is.na(vecteur)] <- mode_val
+                       vecteur
+                     },
+                     "zero" = {
+                       vecteur[is.na(vecteur)] <- 0
+                       vecteur
+                     },
+                     "supprimer" = {
+                       vecteur[!is.na(vecteur)]
+                     },
+                     {
+                       warning("Methode non reconnue, utilisation de la mediane par defaut")
+                       median_val <- median(vecteur, na.rm = TRUE)
+                       vecteur[is.na(vecteur)] <- median_val
+                       vecteur
+                     }
+  )
+  
+  return(resultat)
+}
+
+# Fonction 10: Calculer le mode (pour les variables catégorielles)
+calcul_mode <- function(x) {
+  # Supprimer les NA temporairement
+  x_sans_na <- x[!is.na(x)]
+  if (length(x_sans_na) == 0) {
+    return(NA)
+  }
+  
+  ux <- unique(x_sans_na)
+  mode_val <- ux[which.max(tabulate(match(x_sans_na, ux)))]
+  return(mode_val)
 }

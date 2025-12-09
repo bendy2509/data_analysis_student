@@ -1,2 +1,2 @@
-"Moyenne","Mediane","Ecart_type","Minimum","Maximum"
-19.745,20,7.97987260764048,5,46
+"n","n_manquants","moyenne","mediane","ecart_type","minimum","maximum","q1","q3"
+200,0,19.75,20,7.98,5,46,15,26

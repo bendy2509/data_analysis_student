@@ -3,8 +3,7 @@
 # Message de demarrage
 cat("=== DEBUT DU PROJET - ANALYSE DE PERFORMANCE ETUDIANTE ===\n")
 cat("=== PREPARE PAR : Bendy SERVILUS ===\n")
-cat("Date :", format(Sys.Date(), "%d/%m/%Y"), "\n")
-cat("Heure :", format(Sys.time(), "%H:%M"), "\n\n")
+cat("Date : 08/12/2025\n")
 
 # Definir le repertoire de travail
 # Utiliser here() pour des chemins relatifs
@@ -80,42 +79,8 @@ if (file.exists("scripts/04_visualisations.R")) {
 }
 
 # Etape 8: Message de fin
-cat("\n" + rep("=", 60) + "\n")
+cat("\n", rep("=", 60), "\n")
 cat("=== PROJET TERMINE AVEC SUCCES ===\n")
-cat(rep("=", 60) + "\n\n")
+cat(rep("=", 60), "\n\n")
 
-cat("RESUME DES LIVRABLES CREES:\n")
-cat("-" * 40, "\n")
 
-# Compter les fichiers crees
-if (dir.exists("output/tables")) {
-  tables <- list.files("output/tables", pattern = "\\.csv$")
-  cat("Tables CSV:", length(tables), "fichiers\n")
-}
-
-if (dir.exists("output/figures")) {
-  figures <- list.files("output/figures", pattern = "\\.png$")
-  cat("Graphiques PNG:", length(figures), "fichiers\n")
-}
-
-if (dir.exists("data/processed")) {
-  processed <- list.files("data/processed", pattern = "\\.csv$")
-  cat("Donnees traitees:", length(processed), "fichiers\n")
-}
-
-cat("\nCHEMINS IMPORTANTS:\n")
-cat("-" * 40, "\n")
-cat("Donnees nettoyees: data/processed/donnees_nettoyees.csv\n")
-cat("Donnees completes: data/processed/donnees_completes.csv\n")
-cat("Resultats: output/tables/\n")
-cat("Visualisations: output/figures/\n")
-
-cat("\nINSTRUCTIONS POUR LE RAPPORT:\n")
-cat("-" * 40, "\n")
-cat("1. Ouvrez 'rapport.Rmd' dans RStudio\n")
-cat("2. Cliquez sur 'Knit' pour generer le PDF\n")
-cat("3. Verifiez que tous les resultats sont inclus\n")
-
-cat("\n" + rep("*", 60) + "\n")
-cat("Duree totale:", format(Sys.time() - start_time), "\n")
-cat(rep("*", 60) + "\n")

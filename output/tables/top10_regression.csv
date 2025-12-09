@@ -1,11 +1,11 @@
-"id_etudiant","nom","moyenne_s1","moyenne_s2","variation_moyenne"
-"ETU0184","Alexandre Petit",12.48,9.08,-3.4
-"ETU0102","Alice Guerin",12.12,9.46,-2.66
-"ETU0142","Arthur David",11.66,9.04,-2.62
-"ETU0076","Sarah Garnier",11.1,8.7,-2.4
-"ETU0085","Maxime Morel",12.26,9.95,-2.31
-"ETU0018","Marie Simon",14.1,11.92,-2.18
-"ETU0098","Marie Morel",14.6,12.52,-2.08
-"ETU0114","Thomas Thomas",14.72,12.7,-2.02
-"ETU0187","Sarah Garcia",10.64,8.62,-2.02
-"ETU0121","Victor Dupont",14.43,12.44,-1.99
+"id_etudiant","nom","filiere","moyenne_s1","moyenne_s2","variation_moyenne"
+"ETU0184","Alexandre Petit","Mathématiques",12.48,9.08,-3.4
+"ETU0102","Alice Guerin","Informatique",12.12,9.46,-2.66
+"ETU0142","Arthur David","Economie",11.66,9.04,-2.62
+"ETU0076","Sarah Garnier","Physique",11.1,8.7,-2.4
+"ETU0085","Maxime Morel","Economie",12.26,9.95,-2.31
+"ETU0018","Marie Simon","Mathématiques",14.1,11.92,-2.18
+"ETU0098","Marie Morel","Informatique",14.6,12.52,-2.08
+"ETU0114","Thomas Thomas","Informatique",14.72,12.7,-2.02
+"ETU0187","Sarah Garcia","Economie",10.64,8.62,-2.02
+"ETU0121","Victor Dupont","Mathématiques",14.43,12.44,-1.99
